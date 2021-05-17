@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Export event handling</title>
+    <meta name="description" content="Sales order detail report export option event handling" />
+    <link href="https://cdn.boldreports.com/2.4.19/content/material/bold.reports.all.min.css" rel="stylesheet" />
+    <link href="https://cdn.boldreports.com/2.4.19/content/material/bold.reportdesigner.min.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.boldreports.com/external/jsrender.min.js"></script>
+
+    <!-- Gauge -->
+    <script src="https://cdn.boldreports.com/2.4.19/scripts/common/ej2-base.min.js"></script>
+    <script src="https://cdn.boldreports.com/2.4.19/scripts/common/ej2-data.min.js"></script>
+    <script src="https://cdn.boldreports.com/2.4.19/scripts/common/ej2-pdf-export.min.js"></script>
+    <script src="https://cdn.boldreports.com/2.4.19/scripts/common/ej2-svg-base.min.js"></script>
+    <script src="https://cdn.boldreports.com/2.4.19/scripts/data-visualization/ej2-circulargauge.min.js"></script>
+    <script src="https://cdn.boldreports.com/2.4.19/scripts/data-visualization/ej2-lineargauge.min.js"></script>
+    <script src="https://cdn.boldreports.com/2.4.19/scripts/data-visualization/ej2-maps.min.js"></script>
+
+    <!-- Reports -->
+    <script src="https://cdn.boldreports.com/2.4.19/scripts/common/bold.reports.common.min.js"></script>
+    <script src="https://cdn.boldreports.com/2.4.19/scripts/common/bold.reports.widgets.min.js"></script>
+    <script src="https://cdn.boldreports.com/2.4.19/scripts/common/bold.report-designer-widgets.min.js"></script>
+    <script src="https://cdn.boldreports.com/2.4.19/scripts/bold.report-viewer.min.js"></script>
+    <script src="https://cdn.boldreports.com/2.4.19/scripts/bold.report-designer.min.js"></script>
+
+    <!-- Data Visulaization -->
+    <script src="https://cdn.boldreports.com/2.4.19/scripts/data-visualization/ej.bulletgraph.min.js"></script>
+    <script src="https://cdn.boldreports.com/2.4.19/scripts/data-visualization/ej.chart.min.js"></script>
+
+    <!-- Codemirror -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/addon/hint/show-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/addon/hint/sql-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/sql/sql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/vb/vb.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/codemirror.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/addon/hint/show-hint.css" rel="stylesheet" /> 
+</head>
+
+<body>
+    <div class="splash">
+        <div class="message">JavaScript Reports</div>
+        <div class="loader">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        ej-sample,
+        ej-reportdesigner {
+            display: block;
+            height: inherit;
+            width: inherit;
+        }
+
+        .splash {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateY(-50%) translateX(-50%);
+        }
+
+        .message {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .loader {
+            margin: auto;
+            width: 70px;
+            text-align: center;
+            position: relative;
+        }
+
+        .loader>div {
+            width: 18px;
+            height: 18px;
+            background-color: black;
+            border-radius: 100%;
+            display: inline-block;
+            -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+            animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+        }
+
+        .loader .bounce1 {
+            -webkit-animation-delay: -0.32s;
+            animation-delay: -0.32s;
+        }
+
+        .loader .bounce2 {
+            -webkit-animation-delay: -0.16s;
+            animation-delay: -0.16s;
+        }
+
+        @-webkit-keyframes sk-bouncedelay {
+
+            0%,
+            80%,
+            100% {
+                -webkit-transform: scale(0);
+            }
+
+            40% {
+                -webkit-transform: scale(1);
+            }
+        }
+
+        @keyframes sk-bouncedelay {
+
+            0%,
+            80%,
+            100% {
+                -webkit-transform: scale(0);
+                transform: scale(0);
+            }
+
+            40% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+        }
+    </style>
+    <div id="designer"></div>
+    <script src="/js/boldindex.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementsByClassName("splash")[0].style.display = "None";
+        });
+    </script>
+</body>
+
+</html>

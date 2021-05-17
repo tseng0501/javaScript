@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DevExtreme Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/20.2.4/css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/20.2.4/css/dx.light.css" />
+    <script src="https://cdn3.devexpress.com/jslib/20.2.4/js/dx.all.js"></script>
+
+</head>
+
+<body class="dx-viewport">
+    <div class="demo-container">
+        <div id="chart"></div>
+    </div>
+
+    <script>
+        $(function() {
+            $("#chart").dxChart({
+                rotated: true,
+                dataSource: dataSource,
+                commonSeriesSettings: {
+                    argumentField: "state",
+                    type: "stackedBar"
+                },
+                series: [{
+                    valueField: "young",
+                    name: "0-14"
+                }, {
+                    valueField: "middle",
+                    name: "15-64"
+                }, {
+                    valueField: "older",
+                    name: "65 and older"
+                }],
+                legend: {
+                    verticalAlignment: "bottom",
+                    horizontalAlignment: "center",
+                    itemTextPosition: 'top'
+                },
+                argumentAxis: {
+                    type: "continuous",
+                    label: {
+                        customizeText: function() {
+                            return "S " + this.valueText;
+                        }
+                    }
+                },
+                tooltip: {
+                    enabled: true,
+                    location: "edge",
+                    customizeTooltip: function(arg) {
+                        return {
+                            text: arg.seriesName + " years: " + arg.valueText
+                        };
+                    }
+                }
+            });
+        });
+        var dataSource = [{
+            state: "Germany",
+            young: 1,
+            middle: 1,
+            older: 1
+        }];
+    </script>
+</body>
+
+</html>

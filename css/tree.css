@@ -1,0 +1,20 @@
+.panel{
+    height: 100%;
+}
+.theme-accent{
+    background-color: whitesmoke;
+}
+.dx-drawer-shader{
+    background-color: rgb(234, 234, 236,.2);
+    color : #337ab7;
+}
+.dx-item-content, .dx-icon{
+    font-size: 25px;
+
+}
+.dx-list-item-icon-container{
+    height: 100%;
+}
+.dx-item{
+    padding: 10px;
+}
