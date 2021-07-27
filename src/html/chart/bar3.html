@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang>
+
+<head>
+    <!-- Required meta tags -->
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- jQuery -->
+    <script src="/js/jquery/jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+    <!-- Bootstrap JS -->
+    <script src="/js/Bootstrap/bootstrap.bundle.min.js"></script>
+    <!-- DexExtreme CSS -->
+    <link rel="stylesheet" href="/css/DevExtreme/dx.common.css">
+    <link rel="stylesheet" href="/css/DevExtreme/dx.light.css">
+    <!-- DexExtreme JS -->
+    <script src="/js/DevExtreme/dx.all.js"></script>
+    <!-- JS -->
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <!-- CSS -->
+    <style>
+        /* .canvasjs-chart-credit {
+            display: none;
+        } */
+        
+        #sortChart {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sortChart" style="height: 300px; width: 100%;">
+
+    </div>
+
+    <script>
+        var data = [{
+            y: 62,
+            label: "",
+            x: 0
+        }, {
+            y: 10,
+            label: "",
+            x: 0
+        }, {
+            y: 8,
+            label: "",
+            x: 0
+        }, {
+            y: 16,
+            label: "",
+            x: 0
+        }]
+
+        function a(data) {
+            console.log(data)
+                // _getChartData(data) {
+            let arr = [];
+            const nameArr = ['正常', '錯誤', '警告', '關機']
+            for (let i = 0; i < 4; i++) {
+                arr.push({
+                    type: 'stackedBar100',
+                    showInLegend: false,
+                    name: nameArr[i],
+                    dataPoints: [data[i]],
+                })
+            }
+            return arr
+                // }
+
+        }
+        CanvasJS.addColorSet('color', ['#268070', '#9d7a57', '#974d4d', '#525252', '#000000']);
+        const chartData = a(data);
+        const chart = new CanvasJS.Chart('sortChart', {
+            backgroundColor: 'transparent',
+            zoomEnabled: false,
+            animationEnabled: false,
+            dataPointWidth: 200,
+            colorSet: 'color',
+            axisX: {
+                minimum: 0,
+                maximum: 1,
+                tickLength: 0,
+                lineThickness: 0,
+                margin: -30,
+                valueFormatString: ' ',
+            },
+            axisY: {
+                // 數值刻度
+                interval: 10,
+                maximum: 100,
+                suffix: '%',
+                labelFontColor: 'whitesmoke',
+                labelFontSize: 16,
+            },
+            toolTip: {
+                backgroundColor: '#323232',
+                fontColor: 'whitesmoke',
+                fontSize: 16,
+                fontFamily: '微軟正黑體',
+                shared: true,
+                content: this._toolTip,
+            },
+            data: chartData
+        });
+        chart.render();
+    </script>
+
+</body>
+
+</html>
