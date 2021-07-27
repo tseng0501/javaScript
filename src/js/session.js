@@ -1,5 +1,4 @@
 $(function() {
-    console.log("version")
     $("#simple-treeview").dxTreeView({
         items: items,
         width: 300,
