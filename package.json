@@ -1,0 +1,19 @@
+{
+  "name": "javascript",
+  "version": "1.1.0",
+  "description": "DataMonitoringPlatform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tseng0501/javaScript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tseng0501/javaScript/issues"
+  },
+  "homepage": "https://github.com/tseng0501/javaScript#readme"
+}
