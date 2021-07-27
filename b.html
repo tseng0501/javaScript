@@ -1,0 +1,31 @@
+<!-- HTML5 的宣告方式 -->
+<!DOCTYPE html>
+
+<!-- lang：屬性指定頁面內容的自然語言 zh-Hant：繁體中文 -->
+<html lang="zh-Hant">
+<head>
+    <!-- <meta> charset 用來指定網頁內容是用什麼編碼 (character set)，現在大多數的網頁編碼都是 UTF-8。 -->
+    <meta charset="UTF-8">
+
+    <!-- 網頁在載入 5 秒後，自動跳轉到url -->
+    <!-- <meta http-equiv="refresh" content="5; url=https://www.fooish.com/html/meta-refresh.html"> -->
+
+    <!-- IE=edge：什麼版本IE 就用什麼版本的標準模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 控制螢幕的寬度和縮放比例 width=device-width:指定瀏覽器頁面的寬度同裝置 (device) 的寬度 initial-scale=1.0:指定畫面初始縮放比例為 100% -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <!-- 網頁標題 -->
+    <title>Document</title>
+</head>
+<body>
+    <!-- <output> 是表單 (form) 元素之一，用來顯示計算或使用者操作的結果。 -->
+    <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+        <input type="range" id="b" name="b" value="50" /> +
+        <input type="number" id="a" name="a" value="10" /> =
+        <output name="result" for="a b">60</output>
+      </form>
+
+</body>
+</html>
