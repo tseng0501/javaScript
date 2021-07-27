@@ -11,7 +11,7 @@ $(function() {
 
 var items = [{
     id: "1_1",
-    text: "Super Mart of the West",
+    text: "Super",
     expanded: true,
     items: [{
         id: "1_1_1",
