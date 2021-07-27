@@ -1,4 +1,5 @@
 $(function() {
+    console.log("version")
     $("#simple-treeview").dxTreeView({
         items: items,
         width: 300,
@@ -15,7 +16,7 @@ var items = [{
     expanded: true,
     items: [{
         id: "1_1_1",
-        text: "Video Players"
+        text: "Video Playersaaaaaa"
     }, {
         id: "1_1_2",
         text: "Televisions",
