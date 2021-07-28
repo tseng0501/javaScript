@@ -1,0 +1,23 @@
+{
+  "name": "javascript",
+  "version": "0.0.0-development",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tseng0501/javaScript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tseng0501/javaScript/issues"
+  },
+  "homepage": "https://github.com/tseng0501/javaScript#readme",
+  "devDependencies": {
+    "semantic-release": "^17.4.4"
+  }
+}
